@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    top: -70,
   },
   rowLeft: {
     flex: 1,
