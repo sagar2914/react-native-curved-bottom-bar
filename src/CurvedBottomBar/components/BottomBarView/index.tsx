@@ -10,7 +10,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Text, TouchableOpacity, View, Platform } from 'react-native';
 import { scale } from 'react-native-size-scaling';
 import { useDeviceOrientation } from '../../../useDeviceOrientation';
 import { getPathDown } from '../../utils/pathDown';
@@ -262,7 +262,9 @@ const BottomBarComponent: (
             bgColor={bgColor}
             path={d}
           />
-          {_renderTabContainer(props)}
+          <View style={{ paddingBottom: Platform.OS == 'ios' ? 20 : 0, backgroundColor: bgColor || '#FFF' }}>
+            {_renderTabContainer(props)}
+          </View>
         </View>
       );
     };
